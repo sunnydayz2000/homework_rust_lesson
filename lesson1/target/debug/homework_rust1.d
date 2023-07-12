@@ -1,0 +1,1 @@
+/home/peter/CLionProjects/homework_rust1/target/debug/homework_rust1: /home/peter/CLionProjects/homework_rust1/src/main.rs /home/peter/CLionProjects/homework_rust1/src/mod_inner/fun.rs /home/peter/CLionProjects/homework_rust1/src/mod_inner/mod.rs /home/peter/CLionProjects/homework_rust1/src/mod_outter.rs

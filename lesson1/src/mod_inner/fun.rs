@@ -16,7 +16,7 @@ pub fn inner_print_char_from_a_to_b(char_start: char, char_end: char) -> String 
     if char_start > char_end {
         ret = ret.chars().rev().collect();
     }
-    return  ret;
+    ret
 }
 #[test]
 fn test_inner_print_char_from_a_to_b() {

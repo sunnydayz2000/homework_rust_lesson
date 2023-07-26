@@ -64,6 +64,26 @@ impl fmt::Display for MyImage {
         write!(f, "}}")
     }
 }
+
+trait Drawable {
+    fn draw(&self);
+}
+
+impl Drawable for MyPoint {
+    fn draw(&self) {
+        println!("Drawing a MyPoint: {}", self);
+    }
+}
+impl Drawable for MyImage {
+    fn draw(&self) {
+        println!("Drawing a MyImage: {}", self);
+    }
+}
+
+fn draw(drawable: Box<dyn Drawable>) {
+    drawable.draw();
+}
+
 pub fn myadd(){
     let p1 = MyPoint { x: 1, y: 2 };
     let p2 = MyPoint { x: 3, y: 4 };
@@ -82,4 +102,13 @@ pub fn myadd(){
     };
     let i3 = i1 + i2;
     println!("i3: {}", i3);
+
+        let my_point: Box<dyn Drawable> = Box::new(MyPoint { x: 3, y: 9 });
+    let my_img: Box<dyn Drawable> = Box::new(MyImage {
+        width: 3,
+        height: 2,
+        elements: vec![7, 8, 9, 10, 11, 12],
+    });
+    draw(my_point);
+    draw(my_img);
 }
